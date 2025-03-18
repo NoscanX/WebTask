@@ -1,0 +1,15 @@
+@import url("https://fonts.cdnfonts.com/css/futura-pt");
+
+:root {
+  font-size: 16px;
+  font-family: "Futura PT", sans-serif;
+  --text-and-underline-color: #111111;
+  color: var(--text-and-underline-color);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
