@@ -10,23 +10,26 @@
     <link rel="stylesheet" href="/styles/app.css" />
     <script defer src="/scripts/importProducts.js"></script>
     <script defer src="/scripts/burgerMenu.js"></script>
+    <script defer src="/scripts/navbarLinks.js"></script>
   </head>
   <body>
     <header class="navbar">
       <nav class="navbar__container">
-        <img class="navbar__logo" src="/assets/Arthrohard2.png" alt="logo" />
+        <a class="logo-link" href="#home"
+          ><img class="navbar__logo" src="/assets/Arthrohard2.png" alt="logo"
+        /></a>
         <ul class="navbar__list navbar__list--desktop">
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item--desktop">
             <a class="navbar__link navbar__link--desktop" href="#about"
               >CO NAS WYRÓŻNIA</a
             >
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item--desktop">
             <a class="navbar__link navbar__link--desktop" href="#ingredients"
               >SKŁAD</a
             >
           </li>
-          <li class="navbar__item">
+          <li class="navbar__item navbar__item--desktop">
             <a class="navbar__link navbar__link--desktop" href="#products"
               >PRODUKTY</a
             >
@@ -64,7 +67,7 @@
       </nav>
     </header>
 
-    <section class="section-top section">
+    <section id="home" class="section-top section">
       <div class="section-top__product-container">
         <img
           class="section-top__product-img"
@@ -547,11 +550,11 @@
           <div
             class="section-mid__ingredients__container__item section-mid__ingredients__container__item--desktop"
           >
-            <img
+            <!-- <img
               class="section-mid__ingredients__container__product-photo"
               src="assets/Butla_duza.png"
               alt=""
-            />
+            /> -->
             <button
               class="section-mid__buy-now-btn section-mid__buy-now-btn--desktop"
             >
@@ -652,20 +655,17 @@
             </p>
           </div>
         </div>
-        <div
-          class="section-mid__footer-images__container"
-          id="section-mid__fetch-products-trigger"
-        >
-          <img
+        <div class="section-mid__footer-images__container">
+          <!-- <img
             class="section-mid__footer-images__container__img section-mid__footer-images__container__img--mobile"
             src="/assets/product photo.png"
             alt=""
-          />
-          <img
+          /> -->
+          <!-- <img
             class="section-mid__footer-images__container__img section-mid__footer-images__container__img-dog"
             src="/assets/piesek.png"
             alt=""
-          />
+          /> -->
         </div>
       </div>
     </section>
@@ -689,6 +689,7 @@
         </select>
       </div>
       <div id="section-bottom__products" class="section-bottom__products"></div>
+      <div id="section-mid__fetch-products-trigger"></div>
       <div id="popup" class="popup">
         <div class="popup-content">
           <span id="popup-close" class="popup-close">&times;</span>

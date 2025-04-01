@@ -46,6 +46,17 @@ $fs-desktop-small: 1.25rem;
   transform-origin: bottom center;
 }
 
+@mixin active-link() {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 50%;
+  translate: -50%;
+  height: 2px;
+  bottom: -7px;
+  background-color: #111111;
+}
+
 :root {
   font-size: 1rem;
   font-family: "Futura PT", sans-serif;
@@ -68,15 +79,15 @@ body {
   display: flex;
   align-items: center;
   font-weight: 450;
-  // position: fixed;
-  // width: 100%;
-  // z-index: 1000;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    padding: 9px 15px 0 15px;
+    padding: 9px 15px;
     background-color: $background-white-smoke;
   }
 
@@ -201,6 +212,15 @@ body {
         @include hover-after();
       }
     }
+    &__link--desktop {
+      position: relative;
+      &.active {
+        font-weight: 500;
+      }
+      &.active::after {
+        @include active-link();
+      }
+    }
     &__burgermenu {
       display: none;
     }
@@ -257,6 +277,7 @@ body {
 .section-top {
   text-align: center;
   background: $background-white-smoke;
+  position: relative;
   &__product-container,
   &__product-content {
     display: flex;
@@ -309,8 +330,8 @@ body {
     &__card {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      margin-bottom: 70px;
     }
     &__cards-header,
     &__cards-paragraph {
@@ -325,7 +346,6 @@ body {
       display: grid;
       column-gap: 20px;
       grid-auto-flow: column;
-      margin-bottom: 70px;
     }
     &__paragraph--bold {
       font-weight: 450;
@@ -353,9 +373,11 @@ body {
     display: block;
   }
   .section-top {
+    padding-top: 122px;
     &__product-container {
       flex-direction: row;
-      margin-bottom: 150px;
+      // margin-bottom: 150px;
+      margin-bottom: 70px;
     }
     &__product-content {
       text-align: left;
@@ -385,6 +407,7 @@ body {
     }
 
     &__highlight {
+      padding-top: 30px;
       &__content {
         flex-direction: row;
         justify-content: space-between;
@@ -401,15 +424,12 @@ body {
       &__header {
         font-size: $fs-desktop-mid;
       }
-      // &__card {
-      //   position: relative;
-      //   &::after {
-      //     @include after(90%, 45px);
-      //   }
-      //   &:hover::after {
-      //     @include hover-after();
-      //   }
-      // }
+      &__card {
+        margin: 0 10px;
+      }
+      &__second-card{
+        //TODO
+      }
       &__img {
         border-radius: 5px;
       }
@@ -420,7 +440,13 @@ body {
 // Mid section styles
 
 .section-mid {
-  padding-bottom: 0;
+  background-image: url(/assets/image.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position-y: 70px;
+  background-size: contain;
+  // padding-bottom: 0;
   &__mobile__container {
     display: flex;
     flex-direction: column;
@@ -531,7 +557,8 @@ body {
     &__ingredients__container {
       &__list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: auto;
         gap: 10px;
         &__product-photo {
@@ -605,7 +632,6 @@ body {
     border: 1px solid #a94442;
     background-color: white;
     margin-bottom: 30px;
-    min-width: 320px;
     &__label {
       display: flex;
       justify-content: center;
@@ -716,5 +742,24 @@ body {
         }
       }
     }
+  }
+}
+
+.section-top__highlight__second-card,
+.section-top__highlight__third-card {
+  scroll-margin-top: 48px;
+}
+
+@media (max-width: 1200px) {
+  .section-top__highlight__card {
+    margin-bottom: 70px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section-top__highlight,
+  .section-mid__ingredients__container,
+  .section-bottom {
+    scroll-margin-top: 122px;
   }
 }
