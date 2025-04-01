@@ -26,7 +26,7 @@ document.querySelectorAll('.navbar__link--desktop').forEach(link => {
   });
 
   window.addEventListener('scroll', () => {
-    const scrollPosition = window.scrollY + 122; // Uwzględnij offset
+    const scrollPosition = window.scrollY + 122;
     
     document.querySelectorAll('.navbar__link--desktop').forEach(link => {
       const section = document.querySelector(link.getAttribute('href'));
