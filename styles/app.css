@@ -1,7 +1,7 @@
-@import url("https://fonts.cdnfonts.com/css/futura-pt");
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 :root {
   font-size: 1rem;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: #111111;
 }
 
@@ -238,7 +238,7 @@ body {
 .section-top__buy-now-btn {
   background: #30ab4c;
   color: #f6f6f6;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 10px 40px;
   border: none;
   cursor: pointer;
@@ -355,12 +355,11 @@ body {
   }
 }
 .section-mid {
-  background-image: url(/assets/image.png);
+  background-image: url(/assets/piesek.png);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: 70px;
-  background-size: contain;
+  background-size: auto;
 }
 .section-mid__mobile__container {
   display: flex;
@@ -437,7 +436,7 @@ body {
 .section-mid__buy-now-btn {
   background: #ad4844;
   color: #f6f6f6;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 10px 40px;
   border: none;
   cursor: pointer;
@@ -450,6 +449,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 320px;
 }
 .section-mid__footer-images__container__img-dog {
   width: calc(100% + 30px);
@@ -466,7 +466,7 @@ body {
   }
   .section-mid__ingredients__container__list {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
     gap: 10px;
   }
@@ -513,6 +513,11 @@ body {
   }
   .section-mid__footer-images__container__img--mobile {
     display: none;
+  }
+}
+@media (max-width: 640px) {
+  .section-mid {
+    background-size: contain;
   }
 }
 .section-bottom {
@@ -619,9 +624,15 @@ body {
     flex-direction: row;
     margin-bottom: 120px;
     min-width: 400px;
+    align-items: unset;
   }
   .section-bottom__select__container__label {
     flex: 0 0 70%;
+    height: -moz-max-content;
+    height: max-content;
+  }
+  .section-bottom__select__container__select {
+    height: unset;
   }
   .section-bottom__products {
     display: grid;
@@ -653,6 +664,12 @@ body {
   .section-bottom__products__item:hover::after {
     transform: scaleX(1);
     transform-origin: bottom center;
+  }
+}
+@media (max-width: 350px) {
+  .section-bottom__select__container__label {
+    height: -moz-fit-content;
+    height: fit-content;
   }
 }
 .section-top__highlight__second-card,

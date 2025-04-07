@@ -1,4 +1,5 @@
-@import url("https://fonts.cdnfonts.com/css/futura-pt");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 $underline-color: #111111;
 $text-black-color: #111111;
 $text-white-color: #f1f1f1;
@@ -16,7 +17,7 @@ $fs-desktop-small: 1.25rem;
 @mixin buy-now-buttons($color) {
   background: $color;
   color: #f6f6f6;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Nunito", sans-serif;
   padding: 10px 40px;
   border: none;
   cursor: pointer;
@@ -59,7 +60,7 @@ $fs-desktop-small: 1.25rem;
 
 :root {
   font-size: 1rem;
-  font-family: "Futura PT", sans-serif;
+  font-family: "Nunito", sans-serif;
   color: $text-black-color;
 }
 
@@ -425,7 +426,7 @@ body {
       &__card {
         margin: 0 10px;
       }
-      &__second-card{
+      &__second-card {
         //TODO
       }
       &__img {
@@ -438,12 +439,12 @@ body {
 // Mid section styles
 
 .section-mid {
-  background-image: url(/assets/image.png);
+  background-image: url(/assets/piesek.png);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-position-y: 70px;
-  background-size: contain;
+  // background-position-y: 70px;
+  background-size: auto;
   &__mobile__container {
     display: flex;
     flex-direction: column;
@@ -530,6 +531,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 320px;
     &__img {
       &-dog {
         width: calc(100% + 30px);
@@ -553,8 +555,8 @@ body {
     &__ingredients__container {
       &__list {
         display: grid;
-        // grid-template-columns: repeat(3, 1fr);
-        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
+        // grid-template-columns: 1fr 2fr 1fr;
         grid-template-rows: auto;
         gap: 10px;
         &__product-photo {
@@ -607,6 +609,11 @@ body {
         display: none;
       }
     }
+  }
+}
+@media (max-width: 640px) {
+  .section-mid {
+    background-size: contain;
   }
 }
 
@@ -714,8 +721,13 @@ body {
       flex-direction: row;
       margin-bottom: 120px;
       min-width: 400px;
+      align-items: unset;
       &__label {
         flex: 0 0 70%;
+        height: max-content;
+      }
+      &__select {
+        height: unset;
       }
     }
     &__products {
@@ -735,6 +747,15 @@ body {
         &:hover::after {
           @include hover-after();
         }
+      }
+    }
+  }
+}
+@media (max-width: 350px) {
+  .section-bottom {
+    &__select__container {
+      &__label {
+        height: fit-content;
       }
     }
   }
