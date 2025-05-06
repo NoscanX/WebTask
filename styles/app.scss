@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
 
 $underline-color: #111111;
 $text-black-color: #111111;
@@ -205,11 +205,16 @@ body {
     &__item {
       margin: 0 10px;
       position: relative;
-      &::after {
-        @include after(100%, -7px);
-      }
-      &:hover::after {
-        @include hover-after();
+      // Links with transition hover and active state
+      // &::after {
+      //   @include after(100%, -7px);
+      // }
+      // &:hover::after {
+      //   @include hover-after();
+      // }
+      // Links with active state
+      &:active::after {
+        @include active-link();
       }
     }
     &__link--desktop {
@@ -439,12 +444,7 @@ body {
 // Mid section styles
 
 .section-mid {
-  background-image: url(/assets/piesek.png);
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  // background-position-y: 70px;
-  background-size: auto;
+  padding-bottom: 0;
   &__mobile__container {
     display: flex;
     flex-direction: column;
@@ -531,7 +531,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 320px;
     &__img {
       &-dog {
         width: calc(100% + 30px);
@@ -540,6 +539,16 @@ body {
       }
     }
   }
+}
+.parallax {
+  background-image: url(/assets/pies_nieprzyciety2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  // background-position-y: 70px;
+  background-size: 80%;
+  width: 100%;
+  height: 450px;
 }
 
 @media (min-width: 1200px) {
@@ -611,9 +620,12 @@ body {
     }
   }
 }
-@media (max-width: 640px) {
-  .section-mid {
-    background-size: contain;
+
+// Parallax media query
+
+@media (min-width: 1000px) {
+  .parallax {
+    background-size: 50%;
   }
 }
 
